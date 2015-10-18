@@ -1,3 +1,4 @@
+//проверить, является ли число симметричным
 #include <iostream> 
 using std::cout;
 using std::cin;

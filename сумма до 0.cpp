@@ -1,3 +1,4 @@
+//найти сумму цифр числа до первого встречного нуля
 #include <iostream> 
 using std::cout;
 using std::cin;

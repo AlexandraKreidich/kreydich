@@ -1,3 +1,4 @@
+//¬водитс€ перевЄрнутое число, сгенерировать перевЄрнутое
 #include <iostream> 
 using std::cout;
 using std::cin;

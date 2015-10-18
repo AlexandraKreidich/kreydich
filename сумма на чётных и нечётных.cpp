@@ -1,3 +1,4 @@
+//сумма цифр на чётных позициях, сумма на нечётных. проверка деления на 11
 #include <iostream> 
 using std::cout;
 using std::cin;
