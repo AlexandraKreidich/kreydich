@@ -1,4 +1,4 @@
-//вывести наибольшую цифру числа
+//РЅР°РёР±РѕР»СЊС€Р°СЏ С†РёС„СЂР° С‡РёСЃР»Р°
 #include <iostream>
 #include <clocale>
 #include <cmath>
@@ -10,7 +10,7 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 	int num = 0, max = 0, c = 0, i=0, a=0, subnum=0;
-	cout << " введите число ";
+	cout << " РІРІРµРґРёС‚Рµ С‡РёСЃР»Рѕ ";
 	cin >> num;
 	subnum = num;
 	while (num > 0){
@@ -25,6 +25,6 @@ int main()
 		subnum = subnum / 10;
 		i++;
 	}
-	cout << "максимальная цифра числа- " << i << endl << "порядковый номер цифры справа- " << max << endl;
+	cout << "РЅР°РёР±РѕР»СЊС€Р°СЏ С†РёС„СЂР° С‡РёСЃР»Р°- " << i << endl << "РїРѕСЂСЏРґРєРѕРІС‹Р№ РЅРѕРјРµСЂ С†РёС„СЂС‹ СЃРїСЂР°РІР°- " << max << endl;
 	return 0;
 }
