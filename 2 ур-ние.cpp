@@ -1,4 +1,4 @@
-//решение квадратного уравнения
+//solution of a quadratic equation
 #include <iostream>
 #include <clocale>
 #include <cmath>
@@ -11,11 +11,11 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 	float x1 = 0, x2 = 0, D = 0, a = 0, b = 0, c = 0;;
-	cout << " введите коэфициент a= ";
+	cout << " enter coefficient a= ";
 	cin >> a;
-	cout << "Введите коэфициент b= ";
+	cout << "enter coefficient b= ";
 	cin >> b;
-	cout << " Введите коэфициент с= ";
+	cout << " enter coefficient c= ";
 	cin >> c;
 	D = b*b - 4 * a * c;
 	if (D > 0){

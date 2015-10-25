@@ -1,4 +1,4 @@
-//вывести наибольшую цифру числа
+//the greatest figure of number
 #include <iostream>
 #include <clocale>
 #include <cmath>
@@ -10,7 +10,7 @@ int main()
 {
 	setlocale(LC_ALL, "Russian");
 	int num = 0, max = 0, c = 0, i=0, a=0, subnum=0;
-	cout << " введите число ";
+	cout << " input number ";
 	cin >> num;
 	subnum = num;
 	while (num > 0){
@@ -25,6 +25,6 @@ int main()
 		subnum = subnum / 10;
 		i++;
 	}
-	cout << "максимальная цифра числа- " << i << endl << "порядковый номер цифры справа- " << max << endl;
+	cout << "the greatest figure of number- " << i << endl << "the greatest figure of number- " << max << endl;
 	return 0;
 }
