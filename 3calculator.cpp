@@ -55,7 +55,12 @@ int main(){
 				cout << "Введите второе число: ";
 				cin >> num2;
 				break;
-
+			case'e': 
+			        break;
+			case'c':
+			       break;
+			default:
+			       cout<<"error"<<endl;
 			}
 		}
 		else{
@@ -95,7 +100,12 @@ int main(){
 				cout << "Введите второе число: ";
 				cin >> num2;
 				break;
-
+			case'e': 
+			        break;
+			case'c':
+			       break;
+			default:
+			       cout<<"error"<<endl;
 			}
 		}
 	}
