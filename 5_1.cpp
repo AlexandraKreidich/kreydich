@@ -1,21 +1,21 @@
-#include<iostream>
+п»ї#include<iostream>
 #include<clocale>
 #include<cstdlib>
 using namespace std;
-//инициализация массива
+//РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РјР°СЃСЃРёРІР°
 void init_mass(int A[], const int N){
 	for (int i = 0; i < N; i++){
 		A[i] = rand() % 21 - 10;
 	}
 }
-//вывод массива
+//РІС‹РІРѕРґ РјР°СЃСЃРёРІР°
 void show_array(int A[], const int N){
 	cout << "array 2 " << endl;
 	for (int i = 0; i < N; i++){
 		cout << A[i] << endl;
 	}
 }
-//индекс первого положительного числа 
+//РёРЅРґРµРєСЃ РїРµСЂРІРѕРіРѕ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРіРѕ С‡РёСЃР»Р° 
 int pos_mass(int A[], const int N){
 	int indpos = 0;
 	for (int i = 0; i < N; i++){
@@ -26,7 +26,7 @@ int pos_mass(int A[], const int N){
 	}
 	return indpos;
 }
-//индекс последнего отрицательного числа 
+//РёРЅРґРµРєСЃ РїРѕСЃР»РµРґРЅРµРіРѕ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕРіРѕ С‡РёСЃР»Р° 
 int neg_mass(int A[], const int N){
 	int indneg = 0;
 	for (int i = 0; i < N; i++){
@@ -36,13 +36,13 @@ int neg_mass(int A[], const int N){
 	}
 	return indneg;
 }
-//меняет местами числа
+//РјРµРЅСЏРµС‚ РјРµСЃС‚Р°РјРё С‡РёСЃР»Р°
 void swap(int &a, int &b){
 	int t = a;
 	a = b;
 	b = t;
 }
-//меняет местами первое положительное число и последнее отрицательное 
+//РјРµРЅСЏРµС‚ РјРµСЃС‚Р°РјРё РїРµСЂРІРѕРµ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРµ С‡РёСЃР»Рѕ Рё РїРѕСЃР»РµРґРЅРµРµ РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕРµ 
 void get_sort_array(int A[], const int N){
 	int a = 0, b = 0;
 	a = pos_mass(A, N);

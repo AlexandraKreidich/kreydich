@@ -1,27 +1,27 @@
-#include<iostream>
+п»ї#include<iostream>
 #include<clocale>
 #include<cstdlib>
 using namespace std;
-//инициализация массива
+//РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РјР°СЃСЃРёРІР°
 void init_mass(int A[], const int N){
 	for (int i = 0; i < N; i++){
 		A[i] = rand() % 21 - 10;
 	}
 }
-//вывод массива
+//РІС‹РІРѕРґ РјР°СЃСЃРёРІР°
 void show_array(int A[], const int N){
 	cout << "array: " << endl;
 	for (int i = 0; i < N; i++){
 		cout << A[i] << endl;
 	}
 }
-//меняет местами числа
+//РјРµРЅСЏРµС‚ РјРµСЃС‚Р°РјРё С‡РёСЃР»Р°
 void swap(int &a, int &b){
 	int t = a;
 	a = b;
 	b = t;
 }
-//поиск максимального элемента
+//РїРѕРёСЃРє РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
 int maximum(int A[], const int N){
 	int max = A[0];
 	for (int i = 0; i < N; i++){
@@ -31,7 +31,7 @@ int maximum(int A[], const int N){
 	}
 	return max;
 }
-//поиск минимального элемента
+//РїРѕРёСЃРє РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р°
 int minimum(int A[], const int N){
 	int min = A[0];
 	for (int i = 0; i < N; i++){
@@ -41,7 +41,7 @@ int minimum(int A[], const int N){
 	}
 	return min;
 }
-//замена чётных чисел максимальным элементом, нечётных минимальным
+//Р·Р°РјРµРЅР° С‡С‘С‚РЅС‹С… С‡РёСЃРµР» РјР°РєСЃРёРјР°Р»СЊРЅС‹Рј СЌР»РµРјРµРЅС‚РѕРј, РЅРµС‡С‘С‚РЅС‹С… РјРёРЅРёРјР°Р»СЊРЅС‹Рј
 void sort_max_min_array(int A[], const int N){
 	for (int i = 0; i < N; i += 2){
 		A[i] = maximum(A, N);

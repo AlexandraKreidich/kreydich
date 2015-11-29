@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include <clocale>
@@ -51,6 +51,6 @@ int main(){
 	int A[N][M];
 	initArray(*A, N, M);
 	showArray(*A, N, M);
-	cout << "ñóììà äèàãîíàëè: " << sumDiag(*A,N,M) << endl;
-	cout << "ñóììà ýëåìåíòîâ íèæíåãî òðåóãîëüíèêà: " << sumUnderDiag(*A,N,M) << endl;
+	cout << "ÑÑƒÐ¼Ð¼Ð° Ð´Ð¸Ð°Ð³Ð¾Ð½Ð°Ð»Ð¸: " << sumDiag(*A,N,M) << endl;
+	cout << "ÑÑƒÐ¼Ð¼Ð° ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð½Ð¸Ð¶Ð½ÐµÐ³Ð¾ Ñ‚Ñ€ÐµÑƒÐ³Ð¾Ð»ÑŒÐ½Ð¸ÐºÐ°: " << sumUnderDiag(*A,N,M) << endl;
 }

@@ -1,21 +1,21 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <cstdlib>
 #include <ctime>
 using namespace std;
-//инициализация массива
+//РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РјР°СЃСЃРёРІР°
 void init_array(int A[], const int N){
 	cout << "input numbers: " << endl;
 	for (int i = 0; i < N; i++){
 		cin >> A[i];
 	}
 }
-//вывод массива
+//РІС‹РІРѕРґ РјР°СЃСЃРёРІР°
 void show_array(int A[], const int N){
 	for (int i = 0; i < N; i++){
 		cout << A[i] << endl;
 	}
 }
-//сдвик на к элементов
+//СЃРґРІРёРє РЅР° Рє СЌР»РµРјРµРЅС‚РѕРІ
 void array(int A[], const int N, int k){
 	for (int i = 0; i < k; i++){
 		int b = A[N - 1];

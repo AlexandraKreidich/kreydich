@@ -1,26 +1,26 @@
-#include<iostream>
+п»ї#include<iostream>
 #include<clocale>
 using namespace std;
-//инициализация массива
+//РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ РјР°СЃСЃРёРІР°
 void init_array(int A[], const int N){
 	cout << "input numbers: " << endl;
 	for (int i = 0; i < N; i++){
 		cin >> A[i];
 	}
 }
-//вывод массива
+//РІС‹РІРѕРґ РјР°СЃСЃРёРІР°
 void show_array(int A[], const int N){
 	cout << "your array: " << endl;
 	for (int i = 0; i < N; i++){
 		cout<< A[i] << endl;
 	}
 } 
-//находит введённое число, если не находит, то возвращает -1
+//РЅР°С…РѕРґРёС‚ РІРІРµРґС‘РЅРЅРѕРµ С‡РёСЃР»Рѕ, РµСЃР»Рё РЅРµ РЅР°С…РѕРґРёС‚, С‚Рѕ РІРѕР·РІСЂР°С‰Р°РµС‚ -1
 void find_number(int A[], const int N, int a){
 	int k = 0;
 	for (int i = 0; i < N; i++){
 		if (A[i] == a){
-			cout <<"номер данного элемента равен " << i << endl;
+			cout <<"РЅРѕРјРµСЂ РґР°РЅРЅРѕРіРѕ СЌР»РµРјРµРЅС‚Р° СЂР°РІРµРЅ " << i << endl;
 			break;
 		}
 		else{
@@ -39,7 +39,7 @@ int main(){
 	init_array(A, N);
 	system("cls");
 	show_array(A, N);
-	cout << "Введите число, которое вы хотите найти " << endl;
+	cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ, РєРѕС‚РѕСЂРѕРµ РІС‹ С…РѕС‚РёС‚Рµ РЅР°Р№С‚Рё " << endl;
 	cin >> a;
 	find_number(A, N, a);
 	return 0;
