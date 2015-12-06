@@ -1,10 +1,10 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <cstdlib>
 #include <ctime>
 #include <clocale>
 using namespace std;
 void initArray(int A[], int N){
-	cout << "Ââåäèòå ýëåìåíòû ìàññèâà" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð°" << endl;
 	for (int i = 0; i < N; i++){
 		cin >> A[i];
 	}
@@ -29,10 +29,10 @@ int main(){
 	initArray(A, N);
 	showArray(A, N);
 	int k = 0;
-	cout << "Ââåäèòå ïîðÿäêîâûé íîìåð ýëåìåíòà êîòîðûé âû õîòèòå óäàëèòü(îò 0 äî 9)" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð¾Ñ€ÑÐ´ÐºÐ¾Ð²Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ð²Ñ‹ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ(Ð¾Ñ‚ 0 Ð´Ð¾ 9)" << endl;
 	cin >> k;
 	deleteElement(A, N, k);
-	cout << "íîâûé ìàññèâ" << endl;
+	cout << "Ð½Ð¾Ð²Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²" << endl;
 	showArray(A, k);
 	return 0;
 }

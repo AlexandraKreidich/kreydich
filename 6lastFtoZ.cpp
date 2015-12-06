@@ -1,9 +1,9 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <cstdlib>
 #include <clocale>
 using namespace std;
 void initArray(char A[], int N){
-	cout << "Ââåäèòå ýëåìåíòû ìàññèâà" << endl;
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð°" << endl;
 	for (int i = 0; i < N; i++){
 		cin >> A[i];
 	}
@@ -27,6 +27,6 @@ int main(){
 		}
 	}
 	system("cls");
-	cout << "Íîâûé ìàññèâ: " << endl;
+	cout << "ÐÐ¾Ð²Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð²: " << endl;
 	showArray(A, N);
 }

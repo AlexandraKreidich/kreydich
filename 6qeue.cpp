@@ -1,4 +1,4 @@
-#include <iostream>
+ï»¿#include <iostream>
 #include <cstdlib>
 #include <clocale>
 using namespace std;
@@ -13,7 +13,7 @@ void push(int value){
 		queue[top - 1] = value;
 	}
 	else { 
-		cout << "Î÷åðåäü ïîëíà!" << endl;
+		cout << "ÐžÑ‡ÐµÑ€ÐµÐ´ÑŒ Ð¿Ð¾Ð»Ð½Ð°!" << endl;
 	}
 }
 
@@ -27,27 +27,27 @@ int pop(){
 		queue[top] = NULL;
 		return temp;
 	}
-	else { cout << "Î÷åðåäü ïóñòà!" << endl; }
+	else { cout << "ÐžÑ‡ÐµÑ€ÐµÐ´ÑŒ Ð¿ÑƒÑÑ‚Ð°!" << endl; }
 }
 
 void view(){
 	if (top == 0){
-		cout << "Î÷åðåäü ïóñòà" << endl;
+		cout << "ÐžÑ‡ÐµÑ€ÐµÐ´ÑŒ Ð¿ÑƒÑÑ‚Ð°" << endl;
 	}
 	else{
-		cout << "Òåêóùàÿ âåðøèíà - " << queue[0] << endl;
+		cout << "Ð¢ÐµÐºÑƒÑ‰Ð°Ñ Ð²ÐµÑ€ÑˆÐ¸Ð½Ð° - " << queue[0] << endl;
 	}
 }
 
 int getNum(){
-	cout << "Ââåäèòå ÷èñëî: ";
+	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾: ";
 	int num;
 	cin >> num;
 	return num;
 }
 
 void getSize(){
-	cout << "Òåêóùàÿ äëèíà ñòåêà - " << top << endl;
+	cout << "Ð¢ÐµÐºÑƒÑ‰Ð°Ñ Ð´Ð»Ð¸Ð½Ð° ÑÑ‚ÐµÐºÐ° - " << top << endl;
 }
 
 int main(){
@@ -57,11 +57,11 @@ int main(){
 	push(getNum());
 	view();
 	getSize();
-	cout << "Èçâëå÷åíî: " << pop() << endl;
+	cout << "Ð˜Ð·Ð²Ð»ÐµÑ‡ÐµÐ½Ð¾: " << pop() << endl;
 	getSize();
-	cout << "Èçâëå÷åíî: " << pop() << endl;
+	cout << "Ð˜Ð·Ð²Ð»ÐµÑ‡ÐµÐ½Ð¾: " << pop() << endl;
 	getSize();
-	cout << "Èçâëå÷åíî: " << pop() << endl;
+	cout << "Ð˜Ð·Ð²Ð»ÐµÑ‡ÐµÐ½Ð¾: " << pop() << endl;
 	getSize();
 	pop();
 	push(getNum());
