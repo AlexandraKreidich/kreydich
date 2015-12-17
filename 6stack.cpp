@@ -18,15 +18,15 @@ void push(int value){
 
 int pop(){
 	if (top > 0) { 
-		int temp = stack[top - 1];
+		int temp = stack[top - 1]; // эта переменная действительно нужна???
 		stack[top - 1] = NULL;
 		top--;
 		return temp;
 	}
 	else { cout << "Стек пуст!" << endl; }
 }
-
-void view(){
+ 
+void view(){ //скорее эта ф-ия должна возвращать то что в вершине...
 	if (top == 0){
 		cout << "Стек пуст" << endl;
 	}
@@ -35,7 +35,7 @@ void view(){
 	}
 }
 
-int getNum(){
+int getNum(){ //вообще неяно зачем такую ф-ию создавать
 	cout << "Введите число: ";
 	int num;
 	cin >> num;
