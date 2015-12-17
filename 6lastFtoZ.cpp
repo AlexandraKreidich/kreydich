@@ -16,7 +16,7 @@ void showArray(char A[], int N){
 int main(){
 	setlocale(LC_ALL, "russian");
 	const int N = 10;
-	char A[N] = { NULL };
+	char A[N] = { NULL };// Вы уверены, что понимаете, что такое NULL в языке С++ ( не в C, а именно в С++)
 	initArray(A, N);
 	system("cls");
 	showArray(A, N);
