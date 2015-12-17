@@ -21,7 +21,7 @@ int pop(){
 	if (top > 0) {
 		int temp = queue[0];
 		for (int i = 0; i < top; i++){
-			queue[i] = queue[i + 1];
+			queue[i] = queue[i + 1];// не очень хорошая идея постоянно сдвигать массив. А если его размер не 5, а 50000. Тогда совсем медленно работать будет
 		}
 		top--;
 		queue[top] = NULL;
