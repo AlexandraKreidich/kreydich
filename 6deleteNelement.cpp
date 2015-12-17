@@ -14,9 +14,9 @@ void showArray(int A[], int N){
 		cout << A[i] << endl;
 	}
 }
-void deleteElement(int A[], int N, int &k){
+void deleteElement(int A[], int N, int &k){ // зачем в этой ф-ии менять значение k которое ввели в main? Я не понял?
 
-	for (; k < 9; k++){
+	for (; k < 9; k++){  // Почему тут число 9. Что за детский сад...
 		A[k] = A[k + 1];
 	}
 	A[N-1] = NULL;
@@ -31,8 +31,8 @@ int main(){
 	int k = 0;
 	cout << "Введите порядковый номер элемента который вы хотите удалить(от 0 до 9)" << endl;
 	cin >> k;
-	deleteElement(A, N, k);
+	deleteElement(A, N, k); 
 	cout << "новый массив" << endl;
-	showArray(A, k);
+	showArray(A, k); // Почему вызывается не showArray(A, N)???? Не понял сысл такой странной конструкции...
 	return 0;
 }
