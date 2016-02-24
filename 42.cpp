@@ -1,8 +1,8 @@
-#include <iostream>
+п»ї#include <iostream>
 #include <ctime>
 #include <clocale>
 using namespace std;
-//задача №42
+//Р·Р°РґР°С‡Р° в„–42
 int main()
 {
 	setlocale(LC_ALL, "Russian");
