@@ -1,15 +1,15 @@
-ï»¿#include <iostream>
+#include <iostream>
 #include <ctime>
 #include <clocale>
 using namespace std;
-//Ð·Ð°Ð´Ð°Ñ‡Ð° â„–42
+//çàäà÷à ¹42
 int *p = nullptr;
 int k = 0;
 void showTask(){
-	cout << "Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ Ñ‡Ñ‘Ñ‚Ð½Ñ‹Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð° Ð(N), Ð° Ð¿Ð¾Ð»Ð¾Ð¶Ð¸Ñ‚ÐµÐ»ÑŒÐ½Ñ‹Ðµ Ð¾Ñ‚ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¿Ð¾ ÑƒÐ±Ñ‹Ð²Ð°Ð½Ð¸ÑŽ ÑÑƒÐ¼Ð¼ Ñ†Ð¸Ñ„Ñ€." << endl;
+	cout << "Óäàëèòü ÷¸òíûå ýëåìåíòû ìàññèâà À(N), à ïîëîæèòåëüíûå îòñîðòèðîâàòü ïî óáûâàíèþ ñóìì öèôð." << endl;
 }
 void initArray(int *p){
-	cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð¼Ð°ÑÑÐ¸Ð²Ð° " << endl;
+	cout << "Ââåäèòå ýëåìåíòû ìàññèâà " << endl;
 	for (int i = 0; i < k; i++){
 		cin >> *(p + i);
 	}
@@ -20,7 +20,7 @@ void initArrayRand(int *p){
 	}
 }
 void showArray(int *p){
-	cout << "Ð­Ð»ÐµÐ¼ÐµÐ½Ñ‚Ñ‹ Ð²Ð°ÑˆÐµÐ³Ð¾ Ð¼Ð°ÑÑÐ¸Ð²Ð°: " << endl;
+	cout << "Ýëåìåíòû âàøåãî ìàññèâà: " << endl;
 	for (int i = 0; i < k; i++){
 		cout << p[i] << endl;
 	}
@@ -31,7 +31,7 @@ void deleteElement(int i, int *p){
 	}
 	k--;
 }
-void sortArr(int *p){
+void deleteChetnyeElement(int *p){
 	for (int i = 0; i < k;){
 		if (p[i] % 2 == 0){
 			deleteElement(i, p);
@@ -54,14 +54,23 @@ void swap(int &u, int&v){
 	u = v;
 	v = a;
 }
-void newArray(int *p){
-	int flag = 1, a = k;
-	while (flag){
-		a--; flag = 0;
-		for (int i = 0; i < a; i++){
-			if (sum(p[i]) < sum(p[i + 1])){
-				swap(p[i], p[i + 1]);
-				flag = 1;
+void sortLessSumOfNumb(int *p){
+	for (int n = 1; n < k; n++){
+		for (int m = 0; m < k - n; m++){
+			if (p[m]>0 && p[m + 1]>0){
+				if (sum(p[m]) < sum(p[m + 1])){
+					swap(p[m], p[m + 1]);
+				}
+			}
+			else if (p[m]>0 && p[m + 1] < 0){
+				for (int i = 2; i < k - m; i++){
+					if (p[m + i]>0){
+						if (sum(p[m]) < sum(p[m + i])){
+							swap(p[m], p[m + i]);
+							continue;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -71,11 +80,11 @@ int main()
 	setlocale(LC_ALL, "Russian");
 	int user = 0;
 	while (1){
-		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 1, ÐµÑÐ»Ð¸ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ñ€Ð¾ÑÐ¼Ð¾Ñ‚Ñ€ÐµÑ‚ÑŒ Ñ‚ÐµÐºÑÑ‚ Ð·Ð°Ð´Ð°Ð½Ð¸Ñ." << endl;
-		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 2, ÐµÑÐ»Ð¸ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ñ€Ð¾Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¼Ð°ÑÑÐ¸Ð² Ð²Ñ€ÑƒÑ‡Ð½ÑƒÑŽ." << endl;
-		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 3, ÐµÑÐ»Ð¸ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð¿Ñ€Ð¾Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð¼Ð°ÑÑÐ¸Ð² ÑÐ»ÑƒÑ‡Ð°Ð¹Ð½Ñ‹Ð¼Ð¸ Ñ‡Ð¸ÑÐ»Ð°Ð¼Ð¸." << endl;
-		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 4, ÐµÑÐ»Ð¸ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ñ€Ð°ÑÐ¿ÐµÑ‡Ð°Ñ‚Ð°Ñ‚ÑŒ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚." << endl;
-		cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 5, ÐµÑÐ»Ð¸ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð²Ñ‹Ð¹Ñ‚Ð¸ Ð¸Ð· Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹." << endl;
+		cout << "Ââåäèòå 1, åñëè õîòèòå ïðîñìîòðåòü òåêñò çàäàíèÿ." << endl;
+		cout << "Ââåäèòå 2, åñëè õîòèòå ïðîèíèöèàëèçèðîâàòü ìàññèâ âðó÷íóþ." << endl;
+		cout << "Ââåäèòå 3, åñëè õîòèòå ïðîèíèöèàëèçèðîâàòü ìàññèâ ñëó÷àéíûìè ÷èñëàìè." << endl;
+		cout << "Ââåäèòå 4, åñëè õîòèòå ðàñïå÷àòàòü ðåçóëüòàò." << endl;
+		cout << "Ââåäèòå 5, åñëè õîòèòå âûéòè èç ïðîãðàììû." << endl;
 		cin >> user;
 		switch (user)
 		{
@@ -84,29 +93,32 @@ int main()
 				   break;
 		}
 		case 2:{
-				   cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°" << endl;
+				   cout << "Ââåäèòå êîëè÷åñòâî ýëåìåíòîâ ìàññèâà" << endl;
 				   cin >> k;
 				   p = new int[k];
 				   initArray(p);
 				   break;
 		}
 		case 3:{
-				   cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð¾Ð² Ð¼Ð°ÑÑÐ¸Ð²Ð°" << endl;
+				   cout << "Ââåäèòå êîëè÷åñòâî ýëåìåíòîâ ìàññèâà" << endl;
 				   cin >> k;
 				   p = new int[k];
 
 		}
 		case 4:{
-				   sortArr(p);
+				   deleteChetnyeElement(p);
 				   showArray(p);
-				   cout << "Ð²Ð°Ñˆ Ð½Ð¾Ð²Ñ‹Ð¹ Ð¼Ð°ÑÑÐ¸Ð² " << endl;
-				   newArray(p);
+				   cout << "âàø íîâûé ìàññèâ " << endl;
+				   sortLessSumOfNumb(p);
 				   showArray(p);
 				   break;
 		}
 		case 5:{
 				   return 1;
 				   break;
+		}
+		case 6:{
+				   cout << sum(p[0]) << endl;
 		}
 		default:
 			break;
