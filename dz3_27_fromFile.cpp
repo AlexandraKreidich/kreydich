@@ -2,42 +2,37 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
-#include <stdio.h>
-#include <string.h>
-#include <conio.h>
 #include <clocale>
 using namespace std;
 const int N = 1000;
 void showTask(){
 	cout << "Преобразовать каждое слово в строке, удалив в нём заданную букву." << endl;
 }
-void showResult(char *str){
-	cout << "новая строка: " << str << endl;
-}
-void sortString(char *str, char sym, char *p){
-	p = (char*)memchr(str, sym, strlen(str));
-	while (p != NULL){
-		int i = p - str;
-		memmove(str + i, str + (i + 1), strlen(str) - i);
-		p = (char*)memchr(str, sym, strlen(str));
+void sortString(char *str, char* str2){
+	int i = strcspn(str, str2);
+	while (i < strlen(str)){
+		strcpy(str + i, str + (i + 1));
+		i = strcspn(str, str2);
 	}
+	cout << str << endl;
 }
-void readFromFile(char *str, const int N){
+char* readFromFile(char *str, const int N, char *str2){
 	ifstream infile("D:\\fdata.txt");
 	while (!infile.eof()){
 		infile.getline(str, N);
+		sortString(str, str2);
 	}
+	return 0;
 }
 int main()
 {
 	setlocale(LC_ALL, "Russian");
-	char str[N], *p = nullptr;
+	char str[N], str2[2];
 	int ch = 0;
 	while (1){
 		cout << "Введите 1, чтобы просмотреть задание. " << endl;
 		cout << "Введите 2, чтобы начать." << endl;
-		cout << "Введите 3, чтобы увидеть результат." << endl;
-		cout << "Введите 4, чтобы закончить." << endl;
+		cout << "Введите 3, чтобы закончить." << endl;
 		cin >> ch;
 		switch (ch)
 		{
@@ -47,19 +42,16 @@ int main()
 				  break;
 		}
 		case 2:{
-				   readFromFile(str, N);
-				   cin.get();
-				   cout << "введите символ" << endl;
-				   char sym = getchar();
-				   sortString(str, sym, p);
+				   cout << "vvedite simvol" << endl;
+				   cin >> str2;
+				   while (strlen(str2) > 1){
+					   cout << "vi mozhete vvesti tolko odin simvol" << endl;
+					   cin >> str2;
+				   }
+				   readFromFile(str, N, str2);
 				   break;
 		}
-		case 3:
-		{
-				  showResult(str);
-				  break;
-		}
-		case 4:{
+		case 3:{
 				   return 1;
 				   break;
 		}
