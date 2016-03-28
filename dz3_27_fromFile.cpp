@@ -15,7 +15,7 @@ void showResult(char *str){
 	cout << "новая строка: " << str << endl;
 }
 void sortString(char *str, char sym, char *p){
-	p = (char*)memchr(str, sym, strlen(str));
+	p = (char*)memchr(str, sym, strlen(str));//использовать ф-ию из cstring
 	while (p != NULL){
 		int i = p - str;
 		memmove(str + i, str + (i + 1), strlen(str) - i);
