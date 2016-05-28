@@ -4,6 +4,7 @@
 #include <cstring>
 #include <iomanip>
 #include <fstream>
+#include <cmath>
 
 using namespace std;
 
@@ -20,17 +21,21 @@ public:
 	Point operator+(int);
 	Point operator*(int);
 	Point operator=(Point&);
-	double sqr(double);
-	double dist(Point&, Point&);
+	Point operator-(const Point&);
+	Point operator-(int);
+	friend double dist(Point&, Point&);
 	friend ostream& operator<<(ostream&, const Point&);
 	friend istream& operator>>(istream&, Point&);
+	Point set_point(double, double);
+	double get_point_x() const;
+	double get_point_y() const;
 	~Point();
 };
 
 int main() 
 {
 	setlocale(LC_ALL, "Russian");
-	Point D;
+	Point D(2,3);
 	Point C = D;
 	cout << "Point C = D:" << " C" << C << endl;
 	Point E(3, 5);
@@ -52,6 +57,13 @@ int main()
 	cout << "введите точку G: " << endl;
 	cin >> G;
 	cout << "Point G" << G << endl;
+	Point *tmp = new Point;
+	(*tmp).set_point(1,2);
+	cout << *tmp << endl;
+	Point V = *tmp - 5;
+	cout << "Point V = *tmp - 5: " << V << endl;
+	cout << "координата x точки V: " << tmp->get_point_x() << endl;
+	cout << dist(V,G) << endl;
 }
 
 Point::Point() : x(0), y(0) {}
@@ -102,24 +114,31 @@ Point Point::operator=(Point & D)
 	this->y = D.y;
 	return *this;
 }
-double Point::sqr(double x)
+Point Point::operator-(const Point & A)
 {
-	return x*x;
+	this->x -= A.x;
+	this->y -= A.y;
+	return *this;
 }
-double Point::dist(Point & D, Point & C)
+Point Point::operator-(int a)
 {
-	double Dist = 0.0;
-	Dist = sqrt(sqr(C.x - D.x) + sqr(C.y - D.y));
-	return Dist;
+	this->x -= a;
+	this->y -= a;
+	return *this;
+}
+
+double dist(Point& A, Point& B)
+{
+	return sqrt(pow(A.x - B.x, 2) + pow(A.y - B.y, 2));
 }
 
 ostream & operator<<(ostream &out, const Point &A)
 {
-	out << "(" << A.x << "," << A.y << ")" << endl;
+	out << "(" << A.get_point_x() << "," << A.get_point_y() << ")" << endl;
 	return out;
 }
 
-istream & operator >> (istream &in, Point &A)
+istream & operator>>(istream &in, Point &A)
 {
 	cout << "введите координату x" << endl;
 	in >> A.x;
@@ -127,4 +146,21 @@ istream & operator >> (istream &in, Point &A)
 	in >> A.y;
 	return in;
 }
+Point Point::set_point(double _x, double _y)
+{
+	this->x = _x;
+	this->y = _y;
+	return *this;
+}
+
+double Point::get_point_x() const
+{
+	return x;
+}
+
+double Point::get_point_y() const
+{
+	return y;
+}
+
 Point::~Point() {}
